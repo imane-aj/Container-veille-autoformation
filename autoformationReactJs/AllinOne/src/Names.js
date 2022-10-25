@@ -1,0 +1,1 @@
+export const names = ["imane", "soufiane", "dareen", "moetaz"]
