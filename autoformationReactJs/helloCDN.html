@@ -1,24 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- the first two let us write React code in our JavaScripts,
     and the third, Babel, allows us to write JSX syntax and ES6 in older browsers. -->
-</head>
-<body>
-    <div id="div"></div>
+  </head>
+  <body>
+    <div id="hello"></div>
+    <div id="class"></div>
+
+
 
     <script type="text/babel">
-        function Hello(){
-            return <h1>hello word</h1>
+      const root = ReactDOM.createRoot(document.getElementById("hello"))
+      function Hello() {
+        return <h1>hello word</h1>
+      }
+      
+      root.render(<Hello />, myElement);
+
+       // JSX 
+    
+    // root.render(myElement);
+      
+    // ES6 class
+      class es6Class {
+        constructor(name) {
+          this.brand = name;
         }
-        ReactDOM.render(<Hello />, document.getElementById('div'))
+      }
+
+      const mydiv = new es6Class("es6Class");
+      document.getElementById("class").innerHTML = mydiv.brand;
+
+      // ES6 class method
+    //   class Car {
+    //     constructor(name) {
+    //       this.brand = name;
+    //     }
+    //     present() {
+    //       return "I have a " + this.brand;
+    //     }
+    //   }
+    //   const mycar = new Car("Ford");
+    //   document.write(mycar.present());
+
+    // this : with arrow functions there is no binding of this.
+
+
+    var x = 5 // global var
+    let c = 10 // global let
+   {
+        var b = 6  
+        let m = 20 //local let
+        console.log(x)
+        console.log(c)
+    }
+    console.log(b)
+    console.log(m)
+    
+
+    //array map()
+    const arr   = ['imane', 'dareen', 'soufiane']
+    const myArr =  arr.map((item) => item)
+    console.log(myArr)
+
+    const numbers = [1, 2, 3, 4, 5];
+    const doubled = numbers.map((number) => number * 2);
+    console.log(doubled);
+
+   
     </script>
-</body>
+  </body>
 </html>
