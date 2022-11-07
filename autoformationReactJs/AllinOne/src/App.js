@@ -24,6 +24,7 @@ function App() {
           <EventsClass />
         </div>
       </div>
+      {/* <p>hello word</p> */}
     </div>
   );
 }
